@@ -5,28 +5,11 @@
       "module": "inputs.pastebin",
       "api_scrape": "https://scrape.pastebin.com/api_scraping.php",
       "api_raw": "https://scrape.pastebin.com/api_scrape_item.php?i=",
-      "paste_limit": 200,
+      "paste_limit": 2000,
       "store_all": false
     },
-    "dumpz": {
-      "enabled": true,
-      "module": "inputs.dumpz",
-      "api_scrape": "https://dumpz.org/api/recent",
-      "api_raw": "https://dumpz.org/api/dump",
-      "paste_limit": 200,
-      "store_all": false
-    },
-    "gists": {
-      "enabled": true,
-      "module": "inputs.gists",
-      "api_token": "",
-      "api_limit": 100,
-      "store_all": false,
-      "user_blacklist": [],
-      "file_blacklist": ["grahamcofborg-eval-package-list"]
-    },
-    "slexy":{
-      "enabled": true,
+"slexy":{
+      "enabled": false,
       "module": "inputs.slexy",
       "store_all": false
     }
@@ -37,7 +20,7 @@
       "module": "outputs.elastic_output",
       "classname": "ElasticOutput",
       "elastic_index": "paste-test",
-      "elastic_host": "192.168.1.22",
+      "elastic_host": "localhost",
       "elastic_port": 9200,
       "elastic_user": "elastic",
       "elastic_pass": "changeme",
@@ -53,7 +36,7 @@
       "encode_raw": true
     },
     "csv_output": {
-      "enabled": false,
+      "enabled": true,
       "module": "outputs.csv_output",
       "classname": "CSVOutput",
       "output_path": "logs/csv/"
@@ -65,7 +48,7 @@
       "host": "192.168.1.1",
       "port": 514
     },
-    "smtp_output": {
+ "smtp_output": {
       "enabled": false,
       "module": "outputs.smtp_output",
       "classname": "SMTPOutput",
@@ -95,7 +78,7 @@
   },
   "general": {
     "run_frequency": 300,
-    "logging_level": 20
+    "logging_level": 10
   },
   "post_process": {
     "post_email": {
